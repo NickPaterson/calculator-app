@@ -1,0 +1,1 @@
+document.body.dataset.theme = localStorage.theme;

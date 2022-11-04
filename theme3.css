@@ -1,0 +1,21 @@
+:root {
+    /* backgrounds */
+    --bg-main: 268 75% 9%;
+    --bg-toggle: 268 71% 12%;
+    --bg-screen: 268 71% 12%;
+
+    /* text */
+    --text-dark: 198 20% 13%;
+    --text-light: 0 0% 100%;
+    --text-accent: 52 100% 62%;
+
+    /* keys */
+    --key-bg: 81 89% 26%;
+    --key-shadow: 285 91% 52%;
+
+    --key-accent-pri: 176 100% 44%;
+    --key-accent-shadow-pri: 177 92% 70%;
+    
+    --key-accent-sec: 268 47% 21%;
+    --key-accent-shadow-sec: 290 70% 36%;
+}
