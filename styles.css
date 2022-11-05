@@ -1,12 +1,17 @@
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+
 
 body {
     background-color: hsl(var(--bg-main));
     font-family: 'League Spartan', sans-serif;
     color: hsl(var(--text-light));
+    padding: 1em;
 }
-
+body.theme2 {
+    color: hsl(var(--text-dark));
+}
+body.theme3 {
+    color: hsl(var(--text-accent));
+}
 main {
     display: grid;
     grid-template-columns: 1fr;
@@ -17,25 +22,22 @@ main {
 }
 
 .theme {
-    display: grid;
-    grid-template-columns: 392px 77px 73px;
-    grid-template-rows: 1fr;
-    grid-template-areas: "calc theme options";
+    position: relative;
+    display: flex;
 }
-
+    
 .theme h2 {
-    grid-area: calc;
+    flex: 1;
     padding: 10px;
 }
 .theme p {
-    grid-area: theme;
     padding: 10px;
     font-size: .9rem;
     font-weight: bold;
     line-height: 36px;
 }
 .theme-options {
-    grid-area: options;
+    width: 73px;
     display: grid;
     grid-template-areas: "n1 n2 n3"
                          "themeBG themeBG themeBG"; 
@@ -59,18 +61,37 @@ main {
     height: 25px;
     border-radius: 25px;
     background: hsl(var(--bg-toggle));
+    display: grid;
+    grid-template-areas: "theme1 theme2 theme3";
 }
-.theme-bg::before {
+.theme-dark {grid-area: theme1;}
+.theme-light {grid-area: theme2;}
+.theme-purple {grid-area: theme3;}
+
+.theme .theme1::before,
+.theme .theme2::before,
+.theme .theme3::before {
     content: "";
     display: block;
     width: 15px;
     height: 15px;
     border-radius: 50%;
     background: hsl(var(--key-accent-pri));
-    position: relative;
-    top: 5px;
-    left: 5px;
+    position: absolute;
+    bottom: 11px;
     transition: all .3s ease-in-out;
+}
+.theme .theme1::before {right: 53px;}
+.theme .theme2::before {right: 29px;}
+.theme .theme3::before {right: 5px;}
+
+.theme-dark,
+.theme-light,
+.theme-purple {
+    cursor: pointer;
+}
+.theme a:hover {
+    background: pink;
 }
 
 .cal {
@@ -95,7 +116,12 @@ main {
     color: hsl(var(--text-light));
     height: 128px;
 }
-
+body.theme2 .cal-output {
+    color: hsl(var(--text-dark));
+}
+body.theme3 .cal-output {
+    color: hsl(var(--text-accent));
+}
 .cal-btns {
     grid-area: keys;
     display: grid;
@@ -104,10 +130,15 @@ main {
                          "one two three min"
                          "dott zeroo vide multi"
                          "reset reset equals equals";
-    grid-gap: 23px;
-    padding: 23px;
+    grid-gap: 1.5em;
+    padding: 1.2em;
     border-radius: 10px;
     background: hsl(var(--bg-toggle));
+}
+@media (max-width: 542px) {
+    .cal-btns {
+        grid-gap: .9em;
+    }
 }
 #cal-num-0 {grid-area: zeroo;}
 #cal-num-1 {grid-area: one;}
@@ -129,25 +160,50 @@ main {
 #cal-op-del {grid-area: del;}
 
 .cal-btn {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
     font-weight: bold;
     line-height: 1;
-    color: hsl(var(--text-light));
-    background: hsl(var(--key-bg));
+    color: hsl(var(--text-dark));
+    background: hsl(var(--key-accent-sec));
     border-radius: 5px;
-    box-shadow: 0 5px hsl(var(--key-shadow));
+    box-shadow: 0 5px hsl(var(--key-accent-shadow-sec));
     transition: all .3s ease-in-out;
     height: 61px;
 }
+body.theme3 .cal-btn {
+    color: hsl(var(--text-accent));
+}
 #cal-op-del, 
 #cal-op-reset {
-    background: hsl(var(--key-accent-sec));
-    box-shadow: 0 5px hsl(var(--key-accent-shadow-sec));
+    background: hsl(var(--key-bg));
+    box-shadow: 0 5px hsl(var(--key-shadow));
+    color: hsl(var(--text-light));
 }
+
 #cal-op-equals {
     background: hsl(var(--key-accent-pri));
     box-shadow: 0 5px hsl(var(--key-accent-shadow-pri));
+    color: hsl(var(--text-light));
 }
+body.theme3 #cal-op-equals {
+    color: hsl(var(--text-dark));
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .attribution {
+    font-size: 11px;
+    text-align: center;
+    width: 100vw;
+}
+
+footer .attribution a { color: hsl(var(--key-accent-pri)); }

@@ -9,8 +9,8 @@
 <title>Calculator app</title>
 
 <link href="styles.css" rel="stylesheet">
-<link href="theme1.css" rel="stylesheet">
 
+<!-- <link href="theme1.css" rel="stylesheet"> -->
 <!-- <link href="theme2.css" rel="stylesheet"> -->
 <!-- <link href="theme3.css" rel="stylesheet"> -->
 
@@ -21,6 +21,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
 
+<script src="theme.js" defer></script>
+<script src="calc.js" defer></script>
 </head>
 <body>
   <header>
@@ -34,38 +36,38 @@
         <div class="theme-n1">1</div>
         <div class="theme-n2">2</div>
         <div class="theme-n3">3</div>
-        <div class="theme-bg">
-          <div class="theme-dark"></div>
-          <div class="theme-light"></div>
-          <div class="theme-purple"></div>
+        <div id="theme-bg" class="theme-bg theme1">
+          <div id="theme1" class="theme-dark theme-toggle"></div>
+          <div id="theme2" class="theme-light theme-toggle"></div>
+          <div id="theme3" class="theme-purple theme-toggle"></div>
         </div>
         
       </div>
     </div>
   
     <div class="cal">
-      <div class="cal-output">399,981</div>
+      <div id="cal-output" class="cal-output">0</div>
       <div class="cal-btns">
-        <div id="cal-num-0" class="cal-btn cal-btn-num">0</div>
-        <div id="cal-num-1" class="cal-btn cal-btn-num">1</div>
-        <div id="cal-num-2" class="cal-btn cal-btn-num">2</div>
-        <div id="cal-num-3" class="cal-btn cal-btn-num">3</div>
-        <div id="cal-num-4" class="cal-btn cal-btn-num">4</div>
-        <div id="cal-num-5" class="cal-btn cal-btn-num">5</div>
-        <div id="cal-num-6" class="cal-btn cal-btn-num">6</div>
-        <div id="cal-num-7" class="cal-btn cal-btn-num">7</div>
-        <div id="cal-num-8" class="cal-btn cal-btn-num">8</div>
-        <div id="cal-num-9" class="cal-btn cal-btn-num">9</div>
+        <div id="cal-num-0" class="cal-btn cal-btn-num" value="0">0</div>
+        <div id="cal-num-1" class="cal-btn cal-btn-num" value="1">1</div>
+        <div id="cal-num-2" class="cal-btn cal-btn-num" value="2">2</div>
+        <div id="cal-num-3" class="cal-btn cal-btn-num" value="3">3</div>
+        <div id="cal-num-4" class="cal-btn cal-btn-num" value="4">4</div>
+        <div id="cal-num-5" class="cal-btn cal-btn-num" value="5">5</div>
+        <div id="cal-num-6" class="cal-btn cal-btn-num" value="6">6</div>
+        <div id="cal-num-7" class="cal-btn cal-btn-num" value="7">7</div>
+        <div id="cal-num-8" class="cal-btn cal-btn-num" value="8">8</div>
+        <div id="cal-num-9" class="cal-btn cal-btn-num" value="9">9</div>
 
-        <div id="cal-num-dot" class="cal-btn cal-btn-op">.</div>
-        <div id="cal-op-plus" class="cal-btn cal-btn-op">+</div>
-        <div id="cal-op-minus" class="cal-btn cal-btn-op">-</div>
-        <div id="cal-op-divide" class="cal-btn cal-btn-op">/</div>
-        <div id="cal-op-multiply" class="cal-btn cal-btn-op">x</div>
+        <div id="cal-num-dot" class="cal-btn cal-btn-op" value=".">.</div>
+        <div id="cal-op-plus" class="cal-btn cal-btn-op" value="+">+</div>
+        <div id="cal-op-minus" class="cal-btn cal-btn-op" value="-">-</div>
+        <div id="cal-op-divide" class="cal-btn cal-btn-op" value="/">/</div>
+        <div id="cal-op-multiply" class="cal-btn cal-btn-op" value="*">x</div>
 
-        <div id="cal-op-del" class="cal-btn cal-btn-op">DEL</div>
-        <div id="cal-op-reset" class="cal-btn cal-btn-op">RESET</div>
-        <div id="cal-op-equals" class="cal-btn cal-btn-op">=</div>
+        <div id="cal-op-del" class="cal-btn cal-btn-op" value="DEL">DEL</div>
+        <div id="cal-op-reset" class="cal-btn cal-btn-op" value="RESET">RESET</div>
+        <div id="cal-op-equals" class="cal-btn cal-btn-op" value="=">=</div>
 
       </div>
     </div>
